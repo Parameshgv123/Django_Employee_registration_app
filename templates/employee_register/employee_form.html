@@ -1,0 +1,30 @@
+{% extends "employee_register/base.html" %}
+{% load crispy_forms_tags %}
+
+
+{% block content %}
+<div class="container">
+<form action="{% url 'employee_list' %}" method="post" >
+    {% csrf_token %}
+    {% crispy form %}
+
+    <div class="row">
+        <div class="col-md-8">
+            <button type="submit" class="btn btn-success btn-block btn-lg"><i class="fas fa-database"></i>
+                Submit</button>
+        </div>
+
+    </div>
+
+</form>
+    </div>
+<br>
+<br>
+<div class="row">
+<div class="col-md-4">
+            <a href="{% url 'employee_list' %}" class="btn btn-secondary btn-block btn-lg">
+                <i class="fas fa-stream"></i> Back to list
+            </a>
+        </div>
+    </div>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "employee_register/home.html" %}
+{% block content %}
+<h1>Registration page</h1>
+<form action="" method="post">
+    {% csrf_token %}
+    {{ form.as_table }}
+    <br>
+    <button type="submit"><i class="fa-sharp fa-solid fa-address-card"></i>Register here</button>
+</form>
+{% endblock content %}
